@@ -6,8 +6,12 @@ module.exports = {
   mode: "development",
   entry: "./src/index.tsx",
   output: {
-    filename: "main.js",
+    filename: "[name].js",
     path: path.resolve(__dirname, "dist")
+  },
+  devtool: "inline-source-map",
+  devServer: {
+    static: "./dist"
   },
   module: {
     rules: [
@@ -40,5 +44,8 @@ module.exports = {
     new ESLintPlugin({
       extensions: ["js", "jsx", "ts", "tsx"]
     })
-  ]
+  ],
+  optimization: {
+    runtimeChunk: "single"
+  }
 };

@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "build": "webpack"
+    "build": "webpack",
+    "watch": "webpack --watch",
+    "dev": "webpack serve --open"
   },
   "author": "SkyWT",
   "license": "ISC",
@@ -37,6 +39,7 @@
     "tailwindcss": "^3.4.1",
     "typescript": "^5.4.2",
     "webpack": "^5.90.3",
-    "webpack-cli": "^5.1.4"
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^5.0.4"
   }
 }
