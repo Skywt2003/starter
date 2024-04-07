@@ -3,19 +3,20 @@ module.exports = {
     browser: true,
     es2021: true
   },
-  extends: ["standard-with-typescript", "plugin:react/recommended"],
+  extends: [
+    "standard",
+    "plugin:react/recommended"
+  ],
   overrides: [
     {
       env: {
         node: true
       },
-      files: [".eslintrc.js", "*.config.js"],
+      files: [
+        ".eslintrc.{js,cjs}"
+      ],
       parserOptions: {
         sourceType: "script"
-      },
-      extends: ["plugin:@typescript-eslint/disable-type-checked"],
-      rules: {
-        "@typescript-eslint/no-var-requires": "off"
       }
     }
   ],
@@ -23,9 +24,11 @@ module.exports = {
     ecmaVersion: "latest",
     sourceType: "module"
   },
+  plugins: [
+    "react"
+  ],
   rules: {
-    "@typescript-eslint/semi": ["error", "always"],
-    "@typescript-eslint/quotes": ["error", "double"]
-  },
-  plugins: ["react"]
+    semi: ["error", "always"],
+    quotes: ["error", "double"]
+  }
 };

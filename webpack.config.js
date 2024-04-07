@@ -4,7 +4,7 @@ const path = require("path");
 
 module.exports = {
   mode: "development",
-  entry: "./src/index.tsx",
+  entry: "./src/index.jsx",
   output: {
     filename: "[name].js",
     path: path.resolve(__dirname, "dist")
@@ -29,7 +29,7 @@ module.exports = {
         ]
       },
       {
-        test: /\.tsx?$/,
+        test: /\.jsx?$/,
         exclude: /node_modules/,
         use: {
           loader: "babel-loader"
@@ -42,7 +42,7 @@ module.exports = {
       template: "./src/template.html"
     }),
     new ESLintPlugin({
-      extensions: ["js", "jsx", "ts", "tsx"]
+      extensions: ["js", "jsx"]
     })
   ],
   optimization: {
